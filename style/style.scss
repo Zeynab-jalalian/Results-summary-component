@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-family: "Hanken Grotesk", sans-serif;
 }
 main {
@@ -89,42 +90,6 @@ main {
       align-items: center;
       flex-direction: column;
       gap: 10px;
-      .range-div:nth-child(1) {
-        background: hsl(0, 100%, 95%);
-        div {
-          .name {
-            color: hsl(0, 100%, 67%);
-            margin-left: 10px;
-          }
-        }
-      }
-      .range-div:nth-child(2) {
-        background: hsl(39, 100%, 93%);
-        div {
-          .name {
-            color: hsl(39, 100%, 56%);
-            margin-left: 10px;
-          }
-        }
-      }
-      .range-div:nth-child(3) {
-        background: hsl(166, 100%, 94%);
-        div {
-          .name {
-            color: hsl(166, 100%, 37%);
-            margin-left: 10px;
-          }
-        }
-      }
-      .range-div:nth-child(4) {
-        background: hsl(233, 100%, 93%);
-        div {
-          .name {
-            color: hsl(234, 85%, 45%);
-            margin-left: 10px;
-          }
-        }
-      }
       .range-div {
         display: flex;
         align-items: center;
@@ -162,8 +127,18 @@ main {
         background: hsl(224, 30%, 17%);
       }
     }
+
+    .attribution {
+      margin-top: 20px;
+      font-size: 11px;
+      text-align: center;
+      a {
+        color: hsl(228, 45%, 44%);
+      }
+    }
   }
 }
+
 @media (max-width: 800px) {
   main {
     width: 100%;

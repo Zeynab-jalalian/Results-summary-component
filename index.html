@@ -34,61 +34,54 @@
       </div>
       <div class="part2">
         <h1>Summary</h1>
-        <div class="range">
-          <div class="range-div">
-            <div>
-              <img src="assets/images/icon-reaction.svg" alt="icon" />
-              <span class="name">Reaction</span>
-            </div>
-            <div>
-              <span class="num1">80</span>
-              <span class="num2">/ 100</span>
-            </div>
-          </div>
-          <div class="range-div">
-            <div>
-              <img src="assets/images/icon-memory.svg" alt="icon" />
-              <span class="name">Memory</span>
-            </div>
-            <div>
-              <span class="num1">92</span>
-              <span class="num2">/ 100</span>
-            </div>
-          </div>
-          <div class="range-div">
-            <div>
-              <img src="assets/images/icon-verbal.svg" alt="icon" />
-              <span class="name">Verbal</span>
-            </div>
-            <div>
-              <span class="num1">61</span>
-              <span class="num2">/ 100</span>
-            </div>
-          </div>
-          <div class="range-div">
-            <div>
-              <img src="assets/images/icon-visual.svg" alt="icon" />
-              <span class="name">Visual</span>
-            </div>
-            <div>
-              <span class="num1">72</span>
-              <span class="num2">/ 100</span>
-            </div>
-          </div>
-        </div>
+        <div class="range"></div>
         <button>Continue</button>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://github.com/Zeynab-jalalian">Zeynab Jalalian</a>.
+        </div>
       </div>
     </main>
+
+    <script>
+      fetch("data.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const rangeContainer = document.querySelector(".range");
+         
+
+          const colors = {
+            Reaction: { bg: "hsl(0, 100%, 95%)", text: "hsl(0, 100%, 67%)" },
+            Memory: { bg: "hsl(39, 100%, 93%)", text: "hsl(39, 100%, 56%)" },
+            Verbal: { bg: "hsl(166, 100%, 94%)", text: "hsl(166, 100%, 37%)" },
+            Visual: { bg: "hsl(233, 100%, 93%)", text: "hsl(234, 85%, 45%)" },
+          };
+
+          data.forEach((item) => {
+            const div = document.createElement("div");
+            div.classList.add("range-div");
+            div.style.background = colors[item.category].bg;
+            div.innerHTML = `
+          <div>
+            <img src="${item.icon}" alt="${item.category}" />
+            <span class="name" style="color:${colors[item.category].text}">${
+              item.category
+            }</span>
+          </div>
+          <div>
+            <span class="num1">${item.score}</span>
+            <span class="num2">/ 100</span>
+          </div>
+        `;
+            rangeContainer.appendChild(div);
+          });
+        });
+    </script>
   </body>
 </html>
 <!--
 sass --watch style/style.scss style/style.css
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 -->
