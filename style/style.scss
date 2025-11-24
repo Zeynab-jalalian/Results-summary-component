@@ -13,6 +13,8 @@ body {
   font-family: "Hanken Grotesk", sans-serif;
 }
 main {
+    border-radius: 20px;
+    background: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   .part1 {
@@ -39,29 +41,62 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to bottom,hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      background: linear-gradient(
+        to bottom,
+        hsla(256, 72%, 46%, 1),
+        hsla(241, 72%, 46%, 0)
+      );
       margin: 40px 0;
 
-      .c-1{
+      .c-1 {
         font-weight: 800;
         font-size: 4rem;
         color: white;
       }
-      .c-2{
+      .c-2 {
         font-weight: 500;
         color: hsl(0, 0%, 53%);
       }
     }
-    h1{
-        color: white;
-        font-weight: 700;
+    h1 {
+      color: white;
+      font-weight: 700;
     }
-    p{
-        color: hsl(241, 100%, 89%);
-        font-size: 16px;
-        margin-top: 20px;
-        max-width: 300px;
-        text-align: center;
+    p {
+      color: hsl(241, 100%, 89%);
+      font-size: 16px;
+      margin-top: 20px;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+  .part2 {
+    background: #fff;
+    padding: 20px 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h1 {
+      font-weight: 700;
+      color: hsl(224, 30%, 27%);
+      font-size: 1.5rem;
+    }
+    button {
+      background: hsl(224, 30%, 27%);
+      border-radius: 20px;
+      padding: 15px 20px;
+      text-align: center;
+      color: white;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s ease;
+      border: none;
+      outline: none;
+      &:hover{
+        background:hsl(224, 30%, 17%) ;
+      }
     }
   }
 }
