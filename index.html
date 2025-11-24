@@ -51,7 +51,7 @@
         .then((res) => res.json())
         .then((data) => {
           const rangeContainer = document.querySelector(".range");
-         
+          rangeContainer.innerHTML = "";
 
           const colors = {
             Reaction: { bg: "hsl(0, 100%, 95%)", text: "hsl(0, 100%, 67%)" },
